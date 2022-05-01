@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaAuthorizer", "src\LambdaAuthorizer\LambdaAuthorizer.csproj", "{D4929809-AC80-4917-9ACB-CB0E72C97B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaAuthorizer.Tests", "test\LambdaAuthorizer.Tests\LambdaAuthorizer.Tests.csproj", "{887BDF1A-0AE1-44C3-982E-7863BB362CEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4929809-AC80-4917-9ACB-CB0E72C97B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4929809-AC80-4917-9ACB-CB0E72C97B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4929809-AC80-4917-9ACB-CB0E72C97B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4929809-AC80-4917-9ACB-CB0E72C97B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887BDF1A-0AE1-44C3-982E-7863BB362CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887BDF1A-0AE1-44C3-982E-7863BB362CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887BDF1A-0AE1-44C3-982E-7863BB362CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887BDF1A-0AE1-44C3-982E-7863BB362CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

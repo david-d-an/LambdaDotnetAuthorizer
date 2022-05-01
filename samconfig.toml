@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "lambda-dotnet-authorizer"
+s3_bucket = "virbela.sam.repository"
+s3_prefix = "lambda-dotnet-authorizer"
+region = "us-east-2"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
