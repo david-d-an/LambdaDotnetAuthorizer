@@ -9,6 +9,6 @@ public record ApiGatewayRequest {
 }
 
 public record Headers {
-    public String Username { get; init; }
-    public String Password { get; init; }
+    public string Username { get; init; }
+    public string Password { get; init; }
 }

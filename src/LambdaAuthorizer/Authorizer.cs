@@ -2,12 +2,9 @@ using System;
 using System.Net;
 using System.Net.Http;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.Serialization.SystemTextJson;
-using Newtonsoft.Json;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(DefaultLambdaJsonSerializer))]
@@ -15,15 +12,15 @@ using Newtonsoft.Json;
 namespace LambdaAuthorizer;
 
 public class Authorizer {
-    private HttpClient client = new HttpClient();
+    private readonly HttpClient _client = new HttpClient();
 
     /// <summary>
     /// A simple function that takes a string and does a ToUpper
     /// </summary>
-    /// <param name="auth"></param>
+    /// <param name="request"></param>
     /// <param name="context"></param>
     /// <returns></returns>
-    public async Task<string> RequestHandler(ApiGatewayRequest request, ILambdaContext context) {
+    public async Task<PolicyDocPackage> RequestHandler(ApiGatewayRequest request, ILambdaContext context) {
         try {
             var headers = request.Headers;
             context.Logger.LogLine($"Username: {headers.Username}, Password: ********");
@@ -32,7 +29,7 @@ public class Authorizer {
             context.Logger.LogLine($"Exception: {ex.Message}");
             string username = request.Headers?.Username ?? "Unknown";
             var policyDocPackage = GetPolicyDocPackage(username, AuthType.Deny);
-            return JsonConvert.SerializeObject(policyDocPackage);
+            return policyDocPackage;
         }
     }
 
@@ -46,10 +43,10 @@ public class Authorizer {
         });
 
         var url = "https://parse-virbela-intern.herokuapp.com/parse/functions/guiLogIn";
-        return await client.PostAsync(url, body);
+        return await _client.PostAsync(url, body);
     }
 
-    private async Task<string> GeneratePolicyDocPackage(string username, string password) {
+    private async Task<PolicyDocPackage> GeneratePolicyDocPackage(string username, string password) {
         var response = await LoginToParse(username, password);
         var auth = AuthType.Deny;
         if (response.StatusCode == HttpStatusCode.OK) {
@@ -57,7 +54,7 @@ public class Authorizer {
         }
 
         var policyDocPackage = GetPolicyDocPackage(username, auth);
-        return JsonConvert.SerializeObject(policyDocPackage);
+        return policyDocPackage;
     }
 
     private PolicyDocPackage GetPolicyDocPackage(string username, AuthType auth) {

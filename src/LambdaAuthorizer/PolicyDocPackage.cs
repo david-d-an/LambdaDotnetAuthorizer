@@ -1,12 +1,12 @@
 namespace LambdaAuthorizer;
 
 public record PolicyDocPackage {
-    public string principalId { get; init; }
-    public PolicyDocument policyDocument { get; init; }
+    public string PrincipalId { get; init; }
+    public PolicyDocument PolicyDocument { get; init; }
 
     public PolicyDocPackage(string username, string resource, AuthType auth) {
-        this.principalId = username;
-        this.policyDocument = new PolicyDocument(resource, auth);            
+        this.PrincipalId = username;
+        this.PolicyDocument = new PolicyDocument(resource, auth);            
     }
 }
 
@@ -33,18 +33,4 @@ public record Statement {
         this.Effect = auth.ToString();
     }            
 }
-
-
-// var policyDocPackage = new {
-//     principalId = username,
-//     policyDocument = new {
-//         Version = "2012-10-17", 
-//         Statement = new object[] {
-//             new {
-//                 Action = "execute-api:Invoke",
-//                 Resource = new object[] {"arn:aws:execute-api:us-east-2:656601024875:x11x9w39f8/*/*"},
-//                 Effect = auth == auth.ToString()
-//             }
-//         }
-//     }
-// };            
+   
