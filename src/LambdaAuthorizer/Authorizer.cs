@@ -34,14 +34,18 @@ public class Authorizer {
     }
 
     private async Task<HttpResponseMessage> LoginToParse(string username, string password) {
+        string accountId = Environment.GetEnvironmentVariable("AccountId");
+        string origConfig = Environment.GetEnvironmentVariable("OrigConfig");
+        string applicationId = Environment.GetEnvironmentVariable("ApplicationId");
+        
         var body = new FormUrlEncodedContent(new Dictionary<string, string> {
             {"username", username},
             {"password", password},
-            {"accountId", "Z2oIUVW3Vy"},
-            {"origConfig", "NewDemoTest"},
-            {"_ApplicationId", "zquCagFDNXC8ipCFPjRjV8xw7y4Jik"}
+            {"accountId", accountId},
+            {"origConfig", origConfig},
+            {"_ApplicationId", applicationId}
         });
-
+        
         var url = "https://parse-virbela-intern.herokuapp.com/parse/functions/guiLogIn";
         return await _client.PostAsync(url, body);
     }
