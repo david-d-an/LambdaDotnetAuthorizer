@@ -1,0 +1,55 @@
+{
+  "type": "REQUEST",
+  "methodArn": "arn:aws:execute-api:us-east-2:656601024875:x11x9w39f8/ESTestInvoke-stage/GET/",
+  "resource": "/",
+  "path": "/",
+  "httpMethod": "GET",
+  "headers": {
+    "Username": "david.an@virbela.com",
+    "Password": "N2AS#zhFgpFNpF"
+  },
+  "multiValueHeaders": {
+    "Username": [
+      "david.an@virbela.com"
+    ],
+    "Password": [
+      "N2AS#zhFgpFNpF"
+    ]
+  },
+  "queryStringParameters": {},
+  "multiValueQueryStringParameters": {},
+  "pathParameters": {},
+  "stageVariables": {},
+  "requestContext": {
+    "resourceId": "test-invoke-resource-id",
+    "resourcePath": "/",
+    "httpMethod": "GET",
+    "extendedRequestId": "RdZYKGvbCYcFo8A=",
+    "requestTime": "01/May/2022:18:47:41 +0000",
+    "path": "/",
+    "accountId": "656601024875",
+    "protocol": "HTTP/1.1",
+    "stage": "test-invoke-stage",
+    "domainPrefix": "testPrefix",
+    "requestTimeEpoch": 1651430861648,
+    "requestId": "1a82a371-b4ac-4e32-b913-13fb1022b7e8",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "cognitoIdentityId": null,
+      "apiKey": "test-invoke-api-key",
+      "principalOrgId": null,
+      "cognitoAuthenticationType": null,
+      "userArn": "arn:aws:sts::656601024875:assumed-role/AWSReservedSSO_Administrator_82a26b5acb1d2e8c/david.an@virbela.com",
+      "apiKeyId": "test-invoke-api-key-id",
+      "userAgent": "aws-internal/3 aws-sdk-java/1.12.201 Linux/5.4.176-103.347.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.322-b06 java/1.8.0_322 vendor/Oracle_Corporation cfg/retry-mode/standard",
+      "accountId": "656601024875",
+      "caller": "AROAZRYDYRFV5EXSRQMD5:david.an@virbela.com",
+      "sourceIp": "test-invoke-source-ip",
+      "accessKey": "ASIAZRYDYRFV6NRTTPOC",
+      "cognitoAuthenticationProvider": null,
+      "user": "AROAZRYDYRFV5EXSRQMD5:david.an@virbela.com"
+    },
+    "domainName": "testPrefix.testDomainName",
+    "apiId": "x11x9w39f8"
+  }
+}
